@@ -410,47 +410,13 @@ class FlixelAddon extends LumodAddon {
 			return flixel.FlxG.gamepads.getActiveGamepadIDs();
 		});
 		addCallback("getGamepadModel", function(?id:Int = 0) {
-			switch (flixel.FlxG.gamepads.getByID(id).detectedModel) {
-				case LOGITECH:
-					return 'LOGITECH';
-				case OUYA:
-					return 'OUYA';
-				case PS4:
-					return 'PS4';
-				case PSVITA:
-					return 'PSVITA';
-				case XINPUT:
-					return 'XINPUT';
-				case MAYFLASH_WII_REMOTE:
-					return 'MAYFLASH_WII_REMOTE';
-				case WII_REMOTE:
-					return 'WII_REMOTE';
-				case MFI:
-					return 'MFI';
-				case SWITCH_PRO:
-					return 'SWITCH_PRO';
-				case SWITCH_JOYCON_LEFT:
-					return 'SWITCH_JOYCON_LEFT';
-				case SWITCH_JOYCON_RIGHT:
-					return 'SWITCH_JOYCON_RIGHT';
-				case UNKNOWN:
-					return 'UNKNOWN';
-			}
-			return null;
+			return haxe.EnumTools.EnumValueTools.getName(flixel.FlxG.gamepads.getByID(id).detectedModel);
 		});
 		addCallback("isGamepadConnected", function(?id:Int = 0) {
 			return flixel.FlxG.gamepads.getByID(id).connected;
 		});
 		addCallback("getGamepadAttachment", function(?id:Int = 0) {
-			switch (flixel.FlxG.gamepads.getByID(id).attachment) {
-				case WII_NUNCHUCK:
-					return 'WII_NUNCHUCK';
-				case WII_CLASSIC_CONTROLLER:
-					return 'WII_CLASSIC_CONTROLLER';
-				case NONE:
-					return 'NONE';
-			}
-			return null;
+			return haxe.EnumTools.EnumValueTools.getName(flixel.FlxG.gamepads.getByID(id).attachment);
 		});
 		addCallback("getGamepadDeadZone", function(?id:Int = 0) {
 			return flixel.FlxG.gamepads.getByID(id).deadZone;
@@ -459,13 +425,7 @@ class FlixelAddon extends LumodAddon {
 			return flixel.FlxG.gamepads.getByID(id).deadZone = v;
 		});
 		addCallback("getGamepadDeadZoneMode", function(?id:Int = 0) {
-			switch (flixel.FlxG.gamepads.getByID(id).deadZoneMode) {
-				case INDEPENDENT_AXES:
-					return 'INDEPENDENT_AXES';
-				case CIRCULAR:
-					return 'CIRCULAR';
-			}
-			return null;
+			return haxe.EnumTools.EnumValueTools.getName(flixel.FlxG.gamepads.getByID(id).deadZoneMode);
 		});
 		addCallback("setGamepadDeadZoneMode", function(v:Dynamic, ?id:Int = 0) {
 			switch (v) {
